@@ -26,7 +26,7 @@ export const update = (data) => async (dispatch) => {
   console.log('Updated Data Successfully ', newdata);
   dispatch({
     type: ApiTypes.Edit_Api,
-    payload: {newdata},
+    payload: newdata,
   });
 };
 
@@ -37,10 +37,11 @@ export const deleteData = (id) => async (dispatch) => {
       method: 'DELETE',
     },
   );
+  const data = await response.json();
   console.log('Successfully delete data');
   dispatch({
     type: ApiTypes.Delete_Api,
-    payload: id,
+    payload: data,
   });
 };
 export const add = (data) => async (dispatch) => {
