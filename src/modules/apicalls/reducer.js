@@ -21,10 +21,7 @@ export default function ApiReducer(state = initialState, action) {
       };
     case ApiTypes.Delete_Api:
       return {
-        list: state.list.filter((item) => {
-          console.log('IDDDD ', item.id, action.payload);
-          return item.id !== action.payload;
-        }),
+        list: state.list.filter((item) => item.id !== action.payload),
       };
     default:
       return state;
