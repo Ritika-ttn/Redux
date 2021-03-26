@@ -11,7 +11,7 @@ export const listing = () => async (dispatch) => {
 };
 
 export const update = (data) => async (dispatch) => {
-  const {id} = data;
+  const id = data.id;
   const response = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${id}`,
     {
