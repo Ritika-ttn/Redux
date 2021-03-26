@@ -37,11 +37,10 @@ export const deleteData = (id) => async (dispatch) => {
       method: 'DELETE',
     },
   );
-  const data = await response.json();
   console.log('Successfully delete data');
   dispatch({
     type: ApiTypes.Delete_Api,
-    payload: data,
+    payload: id,
   });
 };
 export const add = (data) => async (dispatch) => {

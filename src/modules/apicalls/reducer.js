@@ -12,9 +12,7 @@ export default function ApiReducer(state = initialState, action) {
     case ApiTypes.Edit_Api:
       return {
         ...state,
-        list: state.list.map((item) =>
-          item.id === action.payload.id ? action.payload : item,
-        ),
+        list: [...state.list, action.payload],
       };
     case ApiTypes.Add_Api:
       return {
