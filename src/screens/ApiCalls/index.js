@@ -143,7 +143,7 @@ class Screen extends Component {
               <TextInput
                 style={styles.textInput}
                 multiline={true}
-                placeholder="Enter new Id"
+                placeholder="Enter new User Id"
                 onChangeText={(data) => this.changedUserId(data)}
               />
               <TextInput
