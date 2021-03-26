@@ -16,4 +16,4 @@ Each List will have edit and delete icon use the respective API's.
 
 All API's need to implemented through redux.
 
-![outputScreen](./src/assets/outputScreen.gif)
+![output](./src/assets/output.gif)
