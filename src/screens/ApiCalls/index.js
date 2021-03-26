@@ -64,6 +64,9 @@ class Screen extends Component {
     this.props.update(data);
     this.setState({isupdateModalVisible: false});
   };
+  DeletedData = (id) => {
+    this.props.deleteData(id);
+  };
   dataStyling = ({item}) => {
     return (
       <View style={styles.txt}>
@@ -76,9 +79,7 @@ class Screen extends Component {
         <Text style={styles.Text}>ID:{item.id}</Text>
         <Text style={styles.Text}>Title:{item.title}</Text>
         <Text style={styles.Text}>Body: {item.body}</Text>
-        <TouchableOpacity
-          key={item.id}
-          onPress={() => this.props.deleteData(item.id)}>
+        <TouchableOpacity onPress={() => this.DeletedData(item.id)}>
           <Image
             style={styles.delete}
             source={require('../../assets/delete.png')}
@@ -183,7 +184,7 @@ const mapDispatchToProps = (dispatch) => ({
   listing: () => dispatch(listing()),
   update: (data) => dispatch(update(data)),
   add: (data) => dispatch(add(data)),
-  deleteData: () => dispatch(deleteData()),
+  deleteData: (id) => dispatch(deleteData(id)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Screen);
 const styles = StyleSheet.create({
